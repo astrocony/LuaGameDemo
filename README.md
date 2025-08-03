@@ -1,4 +1,3 @@
-# LuaGameDemo
 # Lua Game – Portfolio Demo 🎮
 
 This is a simplified demo of my pixel art web game, developed with HTML, CSS and JavaScript.
