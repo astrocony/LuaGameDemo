@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,35 +13,50 @@
 
 
 <body>
+
+
+  <!-- Background music (autoplay + loop)-->
   <audio id="bg-music" autoplay loop>
     <source src="/img/audios/cancion1_version3-2.mp3" type="audio/mpeg">
     Tu navegador no soporta audio.
   </audio>
-  <h1 class="titulo-pixel">En la Oscuridad de Plutón Game</h1>
+
+   <!-- Game title -->
+  <h1 class="titulo-pixel">Into the darkness of Pluto Game</h1>
   
  
 
-  <!-- Contenedor del escenario y Lua animada -->
+  <!-- Main container: game viewport and elements-->
 
   <div id="viewport">
+
+    <!-- HUD: Score bar and counters -->
     <div id="contadores">
       <img src="/img/barra_conteo.png" slt="Barra de contadores" id="barraContadores">
       <div id="contadorPajaros"></div>
       <div id="contadorCorazones"></div>
     </div>
 
+    <!-- Game world -->
+
     <div id="escenario">
-  
+
+      <!-- Main character sprite -->
       <img id="luaSprite" src="/img/lua_idle.png" alt="Lua">
+
+      <!-- Collectible items: birds -->
       <img src="/img/gifs/pajaro.gif" class="item" data-tipo="pajaro" style="left: 400px; top: 190px;">
       <img src="/img/gifs/pajaro.gif" class="item" data-tipo="pajaro" style="left: 350px; top: 190px;">
+
+      <!-- Collectible items: hearts -->
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 5px; top:430px;">
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 180px; top:430px;">
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 500px; top:600px;">
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 400px; top:600px;">
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 650px; top:480px;">
       <img src="/img/gifs/corazon.png" class="item" data-tipo="corazon" style="left: 650px; top:220px;">
-  
+
+      <!-- Platforms for Lua to jump on-->
       <div class="plataforma" style="left: 300px; top: 660px; width: 300px; height: 10px;"></div>
       <div class="plataforma" style="left: 190px; top: 495px; width: 50px; height: 10px;"></div>
       <div class="plataforma" style="left: 10px; top: 495px; width: 50px; height: 10px;"></div>
@@ -52,25 +67,18 @@
       <div class="plataforma" style="left: 295px; top: 240px; width: 250px; height: 10px;"></div>
       <div class="plataforma" style="left: 270px; top: 720px; width: 5550px; height: 10px;"></div>
       <div class="plataforma" style="left: 0px; top: 780px; width: 800px; height: 10px;"></div>
-  
     </div>
   </div>
   
 
-  <!-- Controles táctiles -->
+  <!-- Touch controls (for mobile devices)-->
   <div id="controles">
     <button id="btnIzquierda">⬅</button>
     <button id="btnSalto">⬆</button>
     <button id="btnDerecha">➡</button>
   </div>
 
-
-
-  
-  
-
 </body>
-
 </html>
 
 
