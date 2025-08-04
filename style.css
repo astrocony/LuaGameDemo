@@ -1,0 +1,260 @@
+/* ====== FONT PIXEL ====== */
+
+
+
+@font-face {
+    font-family: 'PixelCony';
+    src: url('/fonts/PixelCony-Regular.ttf') format('truetype');
+  }
+  
+  
+  /* ==== Fondo y cuerpo principal ==== */
+  body {
+    background: url('/img/fondo1.jpg') repeat;
+      overflow-y: auto; /* Permite scroll vertical */
+      overflow-x: hidden; /* Evita el desplazamiento lateral */
+      height: auto; /* Ajusta la altura según el contenido */
+      min-height: 100vh; /* Asegura que ocupe al menos la pantalla completa */
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #333;
+      background-color: #30336d; /* Fondo rosado */
+      touch-action: manipulation; /* Evita zoom con gestos */
+    }
+  
+   /* ======== TITULO ======= */
+  
+  
+   .titulo-pixel {
+    font-family: 'PixelCony', cursive;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 50px;  /* ajusta según tu fuente */
+  }
+  
+  
+  
+  
+    
+    /* ==== Escenario ==== */
+    
+    /* 🎮 Contenedor del juego */
+    /* 🎮 Contenedor del juego */
+    #escenario {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      background-image: url('/img/fondo_real.png');
+      background-size: contain;
+      background-position: center;
+      border: none;
+      overflow: hidden;
+      margin: none;
+      border-radius: none;
+      box-shadow: none;
+    }
+  
+  
+  
+  
+  
+    /* ======== lugar reducido ====== */ 
+  
+    #viewport {
+      width:500px;
+      height: 900px;
+      overflow: hidden;
+      position: relative;
+      margin: 50px auto;   /* centrado horizontal + bajado 50px */
+      border: none;
+      background:none;   /* si quieres un color base */
+    }
+    
+    
+  
+    
+    
+    /* ==== Imagen de Lua (animada) ==== */
+    #luaSprite {
+      position: absolute;
+      bottom: 10px; /* Ajustado para que no quede muy pegado abajo */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 91px;
+      height: 80px;
+      image-rendering: pixelated;
+      transition: all 0.1s linear;
+      opacity: 1;
+    }
+    
+    /* ==== Botón ==== */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f79ac0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    
+    /* Efecto hover para el botón */
+    button:hover {
+      background-color: #e57fa3;
+      transform: translateY(-3px);
+    }
+    
+    /* ==== Texto principal (h1) ==== */
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      animation: fadeIn 2s ease-in-out;
+    }
+    
+    /* ==== Contenedor general ==== */
+    .contenedor {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+      display: inline-block;
+    }
+    
+    /* ==== Efecto de aparición (fade-in) ==== */
+    @keyframes fadeIn {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      }
+    }
+    
+    /* ==== Controles táctiles (alineados) ==== */
+    
+    /* 🎮 Controles táctiles (alineados) */
+    #controles {
+      display:none;
+  
+    }
+    
+    /* 🕹️ Botones de los controles táctiles */
+    #controles button {
+      width: 60px; /* Tamaño base */
+      height: 60px;
+      font-size: 20px;
+      border: none;
+      background-color: #f79ac0; /* Color rosado */
+      color: white;
+      border-radius: 10px; 
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    
+    /* 🌟 Efecto al tocar los botones */
+    #controles button:active {
+      transform: scale(0.95); /* Pequeño efecto de presión */
+      background-color: #ff6496; /* Color más oscuro al tocar */
+    }
+    
+    /* 🎨 Efecto al pasar el mouse en PC */
+    #controles button:hover {
+      background-color: #e57fa3;
+      transform: translateY(-3px);
+    }
+    
+    /* 📱 Ajustes específicos en móviles */
+    @media (max-width: 768px) { 
+      #controles {
+          bottom: 15px; /* Ajustamos la posición */
+          gap: 12px; /* Separación entre botones */
+      }
+    
+      #controles button {
+          width: 55px; /* Ligeramente más pequeños en móviles */
+          height: 55px;
+          font-size: 18px;
+      }
+    }
+    
+    /* 🛑 Bloquear zoom en doble tap en móviles */
+    @media (max-width: 768px) {
+      html, body {
+          touch-action: manipulation;
+      }
+    }
+    
+    
+    .plataforma {
+      position: absolute;
+      width: 100px; /* Ancho de la plataforma */
+      height: 20px; /* Altura de la plataforma */
+      background-color: none; /* Temporalmente roja y transparente */
+      border-radius: none; 
+    }
+    
+  
+  
+  
+    .item {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      image-rendering: pixelated;
+    }
+    
+  
+  
+  
+    /* barra conteo */
+  
+  
+    #contadores {
+      position: relative;
+      top: 0px;    /* ajusta este valor hacia arriba/abajo */
+      left: 0px;
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+    
+    
+    #barraContadores {
+      width: 500px;
+      height: auto;
+      display: block;
+    }
+    
+    #contadorPajaros, #contadorCorazones {
+      position: absolute;
+      top: 50%;  /* centrado vertical */
+      transform: translateY(-50%);  /* ajuste fino */
+      font-family: 'MiPixelFont', monospace;  /* usa tu font pixel */
+      font-size: 100px;  /* cambia según necesites */
+      color: white;  /* o el color que combine */
+    }
+    
+    #contadorPajaros {
+      position: absolute;
+      top: 45px;    /* ajusta según necesites */
+      left: 235px;   /* ajusta para ponerlo sobre el pájaro en la barra */
+      font-family: 'PixelCony';  /* usa tu fuente */
+      font-size: 40px;
+      color: rgb(0, 0, 0);
+    }
+   
+    #contadorCorazones {
+      position: absolute;
+      top: 45px;
+      right: 350px;  /* ajusta para ponerlo sobre el corazón en la barra */
+      font-family: 'PixelCony';
+      font-size: 40px;
+      color: rgb(0, 0, 0);
+    }
+     
